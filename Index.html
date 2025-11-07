@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>EquiFi | Fractional Real Estate Investing & Passive Income</title>
+
+<meta name="description" content="EquiFi is a fractional real estate investing platform that lets you buy shares in rental homes, commercial properties, and real-estate-backed loans with low minimums and passive income potential.">
+<meta name="keywords" content="fractional real estate investing, real estate investing platform, rental property shares, commercial real estate, passive income, real estate crowdfunding, EquiFi">
+<meta name="author" content="EquiFi">
+
+<meta property="og:title" content="EquiFi | Fractional Real Estate Investing & Passive Income" />
+<meta property="og:description" content="Invest fractionally in rental homes, commercial properties, and real-estate-backed loans with low minimums and diversified, passive income." />
+<meta property="og:type" content="website" />
+<!-- TODO: Replace this with your own hosted OG image for better social sharing -->
+<!-- <meta property="og:image" content="https://yourdomain.com/og-image.jpg" /> -->
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%2305a66b' d='M8 56L50 20l42 36-8 9-34-29-34 29z'/%3E%3C/svg%3E">
+
+<style>
+:root {
+  --bg:#0a0e12;
+  --bg-soft:#0f141a;
+  --card:#111820;
+  --muted:#9aa4af;
+  --text:#eaf1f7;
+  --brand:#10b981;
+  --radius:16px;
+  --shadow:0 8px 30px rgba(0,0,0,.25);
+  --container:1200px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html,body{overflow-x:hidden;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Inter,Arial;
+  line-height:1.5;
+}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block;border-radius:12px}
+section{scroll-margin-top:80px;}
+.container{
+  width:min(var(--container), 96vw);
+  margin:0 auto;
+  padding-inline:1.5rem;
+}
+
+/* HEADER */
+header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  backdrop-filter:blur(10px);
+  background:color-mix(in hsl,var(--bg),transparent 30%);
+  border-bottom:1px solid #1f2a37;
+}
+.skip-link{
+  position:absolute;
+  left:-999px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+.skip-link:focus{
+  left:50%;
+  top:.5rem;
+  width:auto;
+  height:auto;
+  padding:.5rem .75rem;
+  transform:translateX(-50%);
+  background:#111827;
+  color:#fff;
+  border-radius:999px;
+  z-index:60;
+  font-size:.85rem;
+}
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:.7rem 0;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  font-weight:800;
+  font-size:1.2rem;
+}
+.logo{
+  width:28px;
+  height:28px;
+  border-radius:7px;
+  background:linear-gradient(135deg,var(--brand),#34d399 55%,#86efac);
+  display:grid;
+  place-items:center;
+  color:#052e1b;
+  font-weight:900;
+}
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:1.4rem;
+  font-size:.9rem;
+  letter-spacing:.03em;
+  text-transform:uppercase;
+}
+.nav-links a{
+  color:var(--muted);
+  transition:color .18s ease, opacity .18s ease, background .18s ease;
+}
+.nav-links a:hover{color:var(--text);opacity:.95}
+.nav-links .nav-cta{
+  padding:.45rem .9rem;
+  border-radius:999px;
+  border:1px solid #273341;
+}
+.nav-links .nav-cta:hover{
+  background:rgba(15,23,42,0.9);
+}
+
+/* HERO */
+.hero{
+  position:relative;
+  isolation:isolate;
+  padding:2.25rem 0 2.5rem;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:-20% 0 auto 0;
+  height:55%;
+  background:radial-gradient(60% 60% at 50% 0%,color-mix(in hsl,var(--brand),transparent 80%) 0%,transparent 60%);
+  opacity:.8;
+  z-index:-1;
+  pointer-events:none;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:2rem;
+  align-items:center;
+}
+.eyebrow{
+  color:var(--brand);
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-size:.8rem;
+}
+h1{
+  font-size:clamp(2rem,4.5vw + .5rem,3.5rem);
+  line-height:1.1;
+  margin:.6rem 0 1rem;
+}
+.lead{
+  color:var(--muted);
+  font-size:1.1rem;
+  max-width:56ch;
+}
+.mission{
+  color:var(--muted);
+  font-style:italic;
+  margin-top:1.1rem;
+  font-size:1rem;
+}
+.meta{
+  display:block;
+  font-size:.75rem;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--muted);
+  margin-bottom:.15rem;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.5rem;
+  padding:.9rem 1.1rem;
+  border-radius:999px;
+  font-weight:600;
+  background:var(--brand);
+  color:#04110b;
+  border:1px solid rgba(0,0,0,0.2);
+  box-shadow:var(--shadow);
+  transition:transform .15s ease,filter .15s ease,box-shadow .15s ease;
+  min-width:150px;
+}
+.btn:hover{
+  transform:translateY(-1px);
+  filter:brightness(1.05);
+  box-shadow:0 12px 35px rgba(0,0,0,.35);
+}
+.btn:focus-visible{
+  outline:2px solid var(--brand);
+  outline-offset:3px;
+}
+.btn.secondary{
+  background:transparent;
+  color:var(--text);
+  border:1px solid #273341;
+  box-shadow:none;
+}
+.hero-ctas{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.8rem;
+  margin-top:1.5rem;
+}
+.hero-card{
+  background:#0f1720;
+  border:1px solid #1f2a37;
+  border-radius:var(--radius);
+  padding:1.2rem;
+  box-shadow:var(--shadow);
+  animation:card-fade-in .6s ease-out both;
+}
+.stat-row{
+  display:flex;
+  gap:.8rem;
+  flex-wrap:wrap;
+}
+.stat{
+  flex:1;
+  border:1px solid #233041;
+  background:#0c131b;
+  border-radius:12px;
+  padding:.9rem;
+  text-align:center;
+}
+.stat strong{
+  font-size:1.3rem;
+  display:block;
+}
+.bar-container{
+  margin-top:.8rem;
+  border:1px solid #1f2a37;
+  background:#0c131b;
+  border-radius:12px;
+  padding:.9rem;
+}
+.bar-container .meta{margin-bottom:.4rem}
+.bar-chart{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:.4rem;
+  align-items:end;
+  margin-top:.5rem;
+}
+.bar{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-weight:600;
+  text-shadow:0 1px 3px rgba(0,0,0,.6);
+  border-radius:10px;
+  text-align:center;
+  font-size:.9rem;
+}
+
+/* HERO INTRO (inside hero) */
+.hero-intro{
+  margin-top:1.8rem;
+  text-align:center;
+}
+.hero-intro p{
+  color:var(--muted);
+  font-size:1.05rem;
+  line-height:1.7;
+  max-width:780px;
+  margin:0 auto;
+  opacity:.96;
+}
+
+/* HOW IT WORKS */
+.how-it-works{
+  background:var(--bg-soft);
+  padding:3rem 0;
+  text-align:center;
+}
+.how-it-works h2{
+  font-size:clamp(1.8rem,3vw,2.5rem);
+  margin-bottom:2rem;
+  color:var(--brand);
+  font-weight:800;
+  position:relative;
+}
+.how-it-works h2::after{
+  content:"";
+  display:block;
+  width:72px;
+  height:3px;
+  border-radius:999px;
+  margin:.6rem auto 0;
+  background:linear-gradient(90deg,var(--brand),#34d399);
+}
+.steps{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1.5rem;
+  max-width:1120px;
+  margin:0 auto;
+}
+.step{
+  background:var(--card);
+  border:1px solid #1f2a37;
+  border-radius:var(--radius);
+  padding:2rem 1.5rem;
+  box-shadow:var(--shadow);
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.step:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 40px rgba(0,0,0,0.35);
+  border-color:rgba(16,185,129,0.6);
+}
+.step-icon{
+  width:56px;
+  height:56px;
+  margin:0 auto 1rem;
+  fill:var(--brand);
+  transition:.3s;
+}
+.step:hover .step-icon{
+  transform:scale(1.1);
+  filter:drop-shadow(0 0 8px var(--brand));
+}
+.step-number{
+  font-size:1.1rem;
+  font-weight:800;
+  color:var(--brand);
+  margin-bottom:.5rem;
+  text-transform:uppercase;
+}
+.step p{
+  color:#f0f5fa;
+  font-size:1.02rem;
+  font-weight:600;
+  line-height:1.55;
+}
+
+/* RETURNS */
+.returns{
+  background:var(--bg);
+  padding:3rem 0;
+}
+.returns h2{
+  font-size:clamp(1.8rem,3vw,2.4rem);
+  margin-bottom:1.5rem;
+  color:var(--brand);
+  font-weight:800;
+  text-align:center;
+  position:relative;
+}
+.returns h2::after{
+  content:"";
+  display:block;
+  width:72px;
+  height:3px;
+  border-radius:999px;
+  margin:.6rem auto 0;
+  background:linear-gradient(90deg,var(--brand),#34d399);
+}
+.returns-grid{
+  margin-top:2rem;
+  display:grid;
+  grid-template-columns:minmax(0,1.2fr) minmax(0,0.9fr);
+  gap:2.5rem;
+  align-items:stretch;
+}
+.returns-lead{
+  color:var(--muted);
+  font-size:1rem;
+  max-width:36rem;
+  margin-bottom:1.4rem;
+}
+.returns-left,
+.returns-right{
+  display:flex;
+  flex-direction:column;
+}
+.returns-right{
+  gap:1rem;
+}
+
+/* bullet style */
+.bullet-list{
+  list-style:none;
+  padding:0;
+  margin:0 0 1.6rem;
+  display:flex;
+  flex-direction:column;
+  gap:.9rem;
+}
+.bullet-list li{
+  display:flex;
+  align-items:flex-start;
+  gap:.75rem;
+}
+.bullet-icon{
+  flex-shrink:0;
+  width:32px;
+  height:32px;
+  border-radius:999px;
+  background:rgba(16,185,129,0.12);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.1rem;
+}
+.bullet-content h3{
+  font-size:.95rem;
+  margin:0 0 .15rem;
+  font-weight:600;
+  color:var(--text);
+}
+.bullet-content p{
+  font-size:.9rem;
+  color:var(--muted);
+  margin:0;
+}
+
+.deal-card{
+  margin-top:1.2rem;
+  background:var(--card);
+  border-radius:var(--radius);
+  border:1px solid #1f2a37;
+  padding:1.3rem 1.2rem;
+}
+.deal-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:.9rem;
+  margin-top:.6rem;
+}
+.deal-item{
+  font-size:.9rem;
+  color:var(--muted);
+}
+.deal-item strong{
+  display:block;
+  color:var(--text);
+  font-size:1rem;
+}
+.deal-label{
+  font-size:.75rem;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--muted);
+}
+
+/* right side */
+.returns-chart,
+.returns-fees{
+  background:var(--card);
+  border-radius:var(--radius);
+  border:1px solid #1f2a37;
+  padding:1.3rem 1.2rem;
+  box-shadow:var(--shadow);
+}
+.returns-chart-title{
+  font-size:.95rem;
+  font-weight:600;
+  margin-bottom:.4rem;
+}
+.returns-chart-sub{
+  font-size:.85rem;
+  color:var(--muted);
+  margin-bottom:1rem;
+}
+
+/* line/area chart */
+.returns-chart-figure{
+  background:#050a10;
+  border-radius:12px;
+  border:1px solid #1f2937;
+  padding:.6rem .75rem .8rem;
+}
+.returns-chart-figure svg{
+  width:100%;
+  height:auto;
+  display:block;
+}
+.returns-note{
+  margin-top:.9rem;
+  font-size:.78rem;
+  color:var(--muted);
+  opacity:.9;
+}
+.returns-note em{
+  display:block;
+  margin-top:.25rem;
+  font-style:italic;
+}
+.returns-fees-title{
+  font-size:.95rem;
+  font-weight:600;
+  margin-bottom:.4rem;
+}
+.returns-fees p{
+  font-size:.85rem;
+  color:var(--muted);
+  margin-bottom:.35rem;
+}
+.returns-fees{
+  margin-top:auto;
+}
+.badge-inline{
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+  padding:.18rem .6rem;
+  border-radius:999px;
+  font-size:.75rem;
+  background:rgba(16,185,129,0.1);
+  border:1px solid rgba(16,185,129,0.35);
+  color:var(--brand);
+}
+
+/* FEATURED PROPERTIES */
+.featured{
+  background:var(--bg);
+  padding:3rem 0 3.2rem;
+  text-align:center;
+}
+.featured h2{
+  color:var(--brand);
+  font-size:clamp(1.8rem,3vw,2.5rem);
+  font-weight:800;
+  margin-bottom:2rem;
+  position:relative;
+}
+.featured h2::after{
+  content:"";
+  display:block;
+  width:72px;
+  height:3px;
+  border-radius:999px;
+  margin:.6rem auto 0;
+  background:linear-gradient(90deg,var(--brand),#34d399);
+}
+.property-list{
+  display:flex;
+  gap:1.5rem;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding-bottom:1rem;
+  -ms-overflow-style:none;
+  scrollbar-width:none;
+}
+.property-list::-webkit-scrollbar{display:none}
+.property{
+  flex:0 0 260px;
+  background:var(--card);
+  border:1px solid #1f2a37;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  scroll-snap-align:start;
+  padding:1rem;
+  position:relative;
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.property:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 35px rgba(0,0,0,.4);
+  border-color:rgba(16,185,129,0.6);
+}
+.property img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:12px;
+}
+.progress-wrap{
+  position:absolute;
+  top:16px;
+  right:16px;
+  width:48px;
+  height:48px;
+}
+.progress-circle{
+  transform:rotate(-90deg);
+  width:48px;
+  height:48px;
+}
+.progress-circle circle{
+  fill:none;
+  stroke-width:4;
+  stroke-linecap:round;
+}
+.progress-bg{stroke:rgba(255,255,255,0.1)}
+.progress-fg{
+  stroke:var(--brand);
+  stroke-dasharray:126;
+  stroke-dashoffset:calc(126 - (var(--percent) * 1.26));
+  transition:stroke-dashoffset 1s ease;
+}
+.progress-text{
+  position:absolute;
+  top:0;
+  left:0;
+  width:48px;
+  height:48px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:.7rem;
+  font-weight:700;
+  color:var(--text);
+}
+.property h3{
+  margin:.6rem 0 .2rem;
+  font-size:1.15rem;
+  font-weight:700;
+}
+.property p{
+  margin:.2rem 0;
+  font-size:.95rem;
+  color:var(--muted);
+}
+.scroll-hint{
+  text-align:left;
+  font-size:.8rem;
+  color:var(--muted);
+  margin-top:.75rem;
+  opacity:.75;
+  display:none;
+}
+@media(max-width:768px){
+  .scroll-hint{display:block;}
+}
+
+/* INVEST NOW */
+.invest{
+  background:var(--bg-soft);
+  padding:3rem 0 3.5rem;
+}
+.invest-inner{
+  max-width:640px;
+  margin:0 auto;
+  text-align:center;
+}
+.invest h2{
+  font-size:clamp(1.8rem,3vw,2.4rem);
+  margin-bottom:1rem;
+  color:var(--brand);
+  font-weight:800;
+  position:relative;
+}
+.invest h2::after{
+  content:"";
+  display:block;
+  width:72px;
+  height:3px;
+  border-radius:999px;
+  margin:.6rem auto 0;
+  background:linear-gradient(90deg,var(--brand),#34d399);
+}
+.invest p{
+  color:var(--muted);
+  font-size:1rem;
+  margin-bottom:.5rem;
+}
+.invest p.strong{
+  font-weight:600;
+  color:#e5eef7;
+}
+.invest-card{
+  margin-top:1.8rem;
+  background:var(--card);
+  border-radius:var(--radius);
+  border:1px solid #1f2a37;
+  box-shadow:var(--shadow);
+  padding:1.8rem 1.5rem;
+}
+.form-note{
+  margin-top:1rem;
+  font-size:.8rem;
+  color:var(--muted);
+  opacity:.8;
+}
+
+/* HubSpot form styling */
+.invest-card .hs-form input,
+.invest-card .hs-form select,
+.invest-card .hs-form textarea{
+  border-radius:999px!important;
+  background:#050a10!important;
+  border:1px solid #273341!important;
+  color:var(--text)!important;
+  padding:.85rem 1rem!important;
+  width:100%!important;
+}
+.invest-card .hs-form label{
+  color:var(--muted)!important;
+  font-weight:600!important;
+  font-size:.9rem!important;
+}
+.invest-card .hs_submit input{
+  border-radius:999px!important;
+  background:var(--brand)!important;
+  color:#04110b!important;
+  border:none!important;
+  padding:.9rem 1.4rem!important;
+  font-weight:600!important;
+  cursor:pointer!important;
+  box-shadow:var(--shadow)!important;
+  width:auto!important;
+}
+.invest-card .hs_submit input:hover{
+  filter:brightness(1.05);
+  transform:translateY(-1px);
+}
+
+/* RESPONSIVE */
+@media(max-width:992px){
+  .hero-grid{
+    grid-template-columns:1fr;
+    text-align:center;
+    gap:2.5rem;
+  }
+  .hero-card{
+    max-width:500px;
+    margin:auto;
+  }
+  .hero-ctas{justify-content:center}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .nav-links{display:none;}
+  .returns-grid{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+  .steps{
+    grid-template-columns:1fr;
+    gap:1.2rem;
+  }
+  .property-list{gap:1rem}
+}
+
+/* FOOTER */
+footer{
+  background:#0b1016;
+  color:var(--muted);
+  font-size:.85rem;
+  text-align:center;
+  padding:1.2rem;
+  border-top:1px solid #1f2a37;
+}
+
+/* SIMPLE ANIMATIONS */
+@keyframes card-fade-in{
+  from{opacity:0;transform:translateY(6px);}
+  to{opacity:1;transform:translateY(0);}
+}
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#top" aria-label="EquiFi home">
+      <span class="logo" aria-hidden="true">▲</span>
+      <span>EquiFi</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#how-it-works">How it works</a>
+      <a href="#returns">Returns</a>
+      <a href="#properties">Properties</a>
+      <a href="#get-started" class="nav-cta">Get early access</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Fractional Real Estate Investing</div>
+        <h1>Own Shares in Properties and the Loans Behind Them</h1>
+        <p class="lead">
+          Build a diversified portfolio of rental properties, commercial real estate, and real-estate-backed loans — all managed by professionals on one investing platform.
+        </p>
+        <p class="mission">
+          <strong>Low minimums, transparent returns, aligned incentives.</strong>
+        </p>
+        <div class="hero-ctas">
+          <a class="btn" href="#get-started">Start investing with EquiFi</a>
+          <a class="btn secondary" href="#properties">Browse fractional properties</a>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="Key investment stats">
+        <div class="stat-row">
+          <div class="stat"><span class="meta">Minimum investment</span><strong>$50</strong></div>
+          <div class="stat"><span class="meta">Properties</span><strong>100+</strong></div>
+          <div class="stat"><span class="meta">Members</span><strong>500+</strong></div>
+        </div>
+        <div class="bar-container">
+          <span class="meta">Portfolio mix</span>
+          <div class="bar-chart" aria-hidden="true">
+            <div class="bar" style="height:96px;background:linear-gradient(180deg,#22c55e,#16a34a)">Single-family</div>
+            <div class="bar" style="height:68px;background:linear-gradient(180deg,#06b6d4,#0891b2)">CRE debt</div>
+            <div class="bar" style="height:48px;background:linear-gradient(180deg,#f59e0b,#b45309)">Other</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- HERO INTRO TEXT -->
+    <div class="hero-intro">
+      <div class="container">
+        <p>
+          <strong>EquiFi</strong> is a fractional real estate investing platform that lets you buy shares in real estate assets and real-estate-backed debt, combining steady income with long-term growth potential.
+          Invest in rental homes, commercial properties, or fixed-income notes backed by real assets.
+          Our team underwrites, manages, and services every investment — you simply choose your exposure and track your portfolio.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works" id="how-it-works" aria-labelledby="how-it-works-heading">
+    <div class="container">
+      <h2 id="how-it-works-heading">How EquiFi Works</h2>
+      <div class="steps">
+        <div class="step">
+          <svg class="step-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 6v12h-5v-6H9v6H4V9l8-6z"/></svg>
+          <div class="step-number">Step 1</div>
+          <p>Browse vetted real estate opportunities across equity and debt structures in different markets.</p>
+        </div>
+        <div class="step">
+          <svg class="step-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1zm.5 5v2H14v2h-1.5v2H14v2h-1.5v2H11v-2H9.5v-2H11v-2H9.5V8H11V6h1.5z"/></svg>
+          <div class="step-number">Step 2</div>
+          <p>Invest in property ownership or secured notes with as little as $50 per deal.</p>
+        </div>
+        <div class="step">
+          <svg class="step-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 3.99 4 6.5 4c1.54 0 3.04.99 3.57 2.36h1.87C14.46 4.99 15.96 4 17.5 4 20.01 4 22 6 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          <div class="step-number">Step 3</div>
+          <p>Collect monthly cash flow from rents or interest payments, plus potential appreciation over time.</p>
+        </div>
+        <div class="step">
+          <svg class="step-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v2H4zm2 5h12v2H6zm3 5h6v2H9zm2 5h2v2h-2z"/></svg>
+          <div class="step-number">Step 4</div>
+          <p>Balance your portfolio across asset-backed equity and income-generating real estate debt.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RETURNS -->
+  <section class="returns" id="returns" aria-labelledby="returns-heading">
+    <div class="container">
+      <h2 id="returns-heading">Real Estate Returns, Simplified</h2>
+      <div class="returns-grid">
+        <div class="returns-left">
+          <p class="returns-lead">
+            We invest in well-researched homes that combine <strong>steady income</strong> with
+            <strong>long-term growth</strong>, aiming to deliver passive income and appreciation.
+          </p>
+
+          <ul class="bullet-list">
+            <li>
+              <div class="bullet-icon">🏠</div>
+              <div class="bullet-content">
+                <h3>Buy the property</h3>
+                <p>
+                  We acquire a home for about <strong>$400,000</strong> — including purchase price,
+                  closing costs and light rehab — and place it into an investment-ready structure.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="bullet-icon">🔢</div>
+              <div class="bullet-content">
+                <h3>Offer fractional shares</h3>
+                <p>
+                  We issue <strong>10,000 shares</strong> at <strong>$40</strong> each.
+                  Your <strong>$1,000</strong> investment equals <strong>25 shares</strong> in the property.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="bullet-icon">💸</div>
+              <div class="bullet-content">
+                <h3>Earn rental income</h3>
+                <p>
+                  The home rents for <strong>$2,500/month</strong>. After expenses and management,
+                  investors share about <strong>$1,500/month</strong> in net income.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="bullet-icon">📈</div>
+              <div class="bullet-content">
+                <h3>Grow over time</h3>
+                <p>
+                  That’s roughly <strong>~4% yearly cash flow</strong> on the property value,
+                  plus an expected <strong>3–5% annual appreciation</strong> over the long term.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="bullet-icon">🧾</div>
+              <div class="bullet-content">
+                <h3>Potential tax benefits</h3>
+                <p>
+                  Ownership is typically structured through an <strong>LLC</strong>, which can pass through
+                  income, expenses and <strong>depreciation</strong>. This may reduce taxable income on the
+                  distributions you receive (depending on your situation).
+                </p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="deal-card" aria-label="Example fractional real estate deal snapshot">
+            <div class="deal-label">Example deal snapshot</div>
+            <div class="deal-grid">
+              <div class="deal-item">
+                <span class="deal-label">All-in cost</span>
+                <strong>$400,000</strong>
+              </div>
+              <div class="deal-item">
+                <span class="deal-label">Shares issued</span>
+                <strong>10,000</strong>
+              </div>
+              <div class="deal-item">
+                <span class="deal-label">Price per share</span>
+                <strong>$40</strong>
+              </div>
+              <div class="deal-item">
+                <span class="deal-label">Your investment</span>
+                <strong>$1,000 (25 shares)</strong>
+              </div>
+              <div class="deal-item">
+                <span class="deal-label">Cash yield</span>
+                <strong>~4% p.a.</strong>
+              </div>
+              <div class="deal-item">
+                <span class="deal-label">Illustrative total return</span>
+                <strong>~8% p.a.</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="returns-right">
+          <div class="returns-chart" aria-label="Illustrative return projection">
+            <div class="returns-chart-title">How $1,000 could grow over time</div>
+            <div class="returns-chart-sub">
+              Illustrative <strong>8% annual return</strong> (about 4% income + 4% appreciation), with earnings reinvested.
+            </div>
+
+            <div class="returns-chart-figure" aria-hidden="true">
+              <svg viewBox="0 0 320 180" role="img">
+                <defs>
+                  <linearGradient id="areaFill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#22c55e" stop-opacity="0.55" />
+                    <stop offset="100%" stop-color="#22c55e" stop-opacity="0" />
+                  </linearGradient>
+                </defs>
+
+                <!-- horizontal grid lines -->
+                <g stroke="rgba(148,163,184,0.3)" stroke-width="0.5">
+                  <line x1="32" y1="30"  x2="300" y2="30" />
+                  <line x1="32" y1="70"  x2="300" y2="70" />
+                  <line x1="32" y1="110" x2="300" y2="110" />
+                  <line x1="32" y1="150" x2="300" y2="150" />
+                </g>
+
+                <!-- y-axis -->
+                <line x1="32" y1="20" x2="32" y2="160" stroke="rgba(148,163,184,0.6)" stroke-width="1" />
+                <!-- x-axis -->
+                <line x1="32" y1="160" x2="300" y2="160" stroke="rgba(148,163,184,0.6)" stroke-width="1" />
+
+                <!-- area under curve -->
+                <path
+                  d="M32 140
+                     L95 132
+                     L158 118
+                     L221 104
+                     L300 68
+                     L300 160
+                     L32 160 Z"
+                  fill="url(#areaFill)"
+                />
+
+                <!-- growth line -->
+                <path
+                  d="M32 140
+                     L95 132
+                     L158 118
+                     L221 104
+                     L300 68"
+                  fill="none"
+                  stroke="#22c55e"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+
+                <!-- data points -->
+                <g fill="#0f172a" stroke="#22c55e" stroke-width="2">
+                  <circle cx="32"  cy="140" r="4" />
+                  <circle cx="95"  cy="132" r="4" />
+                  <circle cx="158" cy="118" r="4" />
+                  <circle cx="221" cy="104" r="4" />
+                  <circle cx="300" cy="68"  r="4" />
+                </g>
+
+                <!-- x-axis labels -->
+                <g fill="#94a3b8" font-size="10">
+                  <text x="32"  y="174" text-anchor="middle">Today</text>
+                  <text x="95"  y="174" text-anchor="middle">Year 1</text>
+                  <text x="158" y="174" text-anchor="middle">Year 3</text>
+                  <text x="221" y="174" text-anchor="middle">Year 5</text>
+                  <text x="300" y="174" text-anchor="middle">Year 10</text>
+                </g>
+              </svg>
+            </div>
+
+            <p class="returns-note">
+              In this example, your $1,000 could grow to around <strong>$1,470</strong> in 5 years and about
+              <strong>$2,160</strong> in 10 years, if you reinvest at an 8% annual return.<br>
+              <em>Illustrative only. Actual returns, fees, and taxes may differ and are not guaranteed.</em>
+            </p>
+          </div>
+
+          <div class="returns-fees" id="how-we-make-money">
+            <div class="returns-fees-title">How We Make Money</div>
+            <p>
+              To keep sourcing great properties and managing your fractional real estate investments,
+              EquiFi charges a <strong>1.8% annual asset management fee</strong> on invested capital.
+            </p>
+            <p>
+              We also <strong>co-invest 10%</strong> in every property, owning shares alongside you — so our interests stay aligned with yours.
+            </p>
+            <p style="margin-top:.5rem;font-weight:600;color:var(--brand);display:flex;align-items:center;gap:.4rem;">
+              ▲ We only earn when your property performs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROPERTIES -->
+  <section class="featured" id="properties" aria-labelledby="featured-heading">
+    <div class="container">
+      <h2 id="featured-heading">Featured Fractional Properties</h2>
+      <div class="property-list" aria-label="Sample properties available for fractional investment">
+        <article class="property" style="--percent:80">
+          <div class="progress-wrap">
+            <svg class="progress-circle" viewBox="0 0 48 48" aria-hidden="true">
+              <circle class="progress-bg" cx="24" cy="24" r="20"></circle>
+              <circle class="progress-fg" cx="24" cy="24" r="20"></circle>
+            </svg>
+            <div class="progress-text">80%</div>
+          </div>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80" alt="Modern suburban rental home investment property - Bulbasaur Heights exterior">
+          <h3>Bulbasaur Heights</h3>
+          <p>Verdant City, OR</p>
+          <p>💵 $25/share</p>
+          <p>👥 1,320 investors</p>
+        </article>
+
+        <article class="property" style="--percent:65">
+          <div class="progress-wrap">
+            <svg class="progress-circle" viewBox="0 0 48 48" aria-hidden="true">
+              <circle class="progress-bg" cx="24" cy="24" r="20"></circle>
+              <circle class="progress-fg" cx="24" cy="24" r="20"></circle>
+            </svg>
+            <div class="progress-text">65%</div>
+          </div>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Modern two-story suburban home - Charmander Plaza fractional real estate">
+          <h3>Charmander Plaza</h3>
+          <p>Emberville, TX</p>
+          <p>💵 $40/share</p>
+          <p>👥 850 investors</p>
+        </article>
+
+        <article class="property" style="--percent:92">
+          <div class="progress-wrap">
+            <svg class="progress-circle" viewBox="0 0 48 48" aria-hidden="true">
+              <circle class="progress-bg" cx="24" cy="24" r="20"></circle>
+              <circle class="progress-fg" cx="24" cy="24" r="20"></circle>
+            </svg>
+            <div class="progress-text">92%</div>
+          </div>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80" alt="Suburban rental property with front lawn - Squirtle Shores exterior">
+          <h3>Squirtle Shores</h3>
+          <p>Baytown, FL</p>
+          <p>💵 $30/share</p>
+          <p>👥 1,275 investors</p>
+        </article>
+
+        <article class="property" style="--percent:50">
+          <div class="progress-wrap">
+            <svg class="progress-circle" viewBox="0 0 48 48" aria-hidden="true">
+              <circle class="progress-bg" cx="24" cy="24" r="20"></circle>
+              <circle class="progress-fg" cx="24" cy="24" r="20"></circle>
+            </svg>
+            <div class="progress-text">50%</div>
+          </div>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=800&q=80" alt="New-build modern house suitable for rental investment - Pikachu Pointe exterior">
+          <h3>Pikachu Pointe</h3>
+          <p>Spark City, CA</p>
+          <p>💵 $45/share</p>
+          <p>👥 800 investors</p>
+        </article>
+
+        <article class="property" style="--percent:78">
+          <div class="progress-wrap">
+            <svg class="progress-circle" viewBox="0 0 48 48" aria-hidden="true">
+              <circle class="progress-bg" cx="24" cy="24" r="20"></circle>
+              <circle class="progress-fg" cx="24" cy="24" r="20"></circle>
+            </svg>
+            <div class="progress-text">78%</div>
+          </div>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=800&q=80" alt="Modern suburban property with attached garage - Eevee Estates exterior">
+          <h3>Eevee Estates</h3>
+          <p>Willow Springs, CO</p>
+          <p>💵 $35/share</p>
+          <p>👥 1,310 investors</p>
+        </article>
+
+        <article class="property" style="--percent:58">
+          <div class="progress-wrap">
+            <svg class="progress-circle" viewBox="0 0 48 48" aria-hidden="true">
+              <circle class="progress-bg" cx="24" cy="24" r="20"></circle>
+              <circle class="progress-fg" cx="24" cy="24" r="20"></circle>
+            </svg>
+            <div class="progress-text">58%</div>
+          </div>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80" alt="Suburban investment home - Jigglypuff Junction exterior">
+          <h3>Jigglypuff Junction</h3>
+          <p>Harmony, NC</p>
+          <p>💵 $20/share</p>
+          <p>👥 2,900 investors</p>
+        </article>
+
+        <article class="property" style="--percent:83">
+          <div class="progress-wrap">
+            <svg class="progress-circle" viewBox="0 0 48 48" aria-hidden="true">
+              <circle class="progress-bg" cx="24" cy="24" r="20"></circle>
+              <circle class="progress-fg" cx="24" cy="24" r="20"></circle>
+            </svg>
+            <div class="progress-text">83%</div>
+          </div>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Contemporary rental property with large windows - Snorlax Suites exterior">
+          <h3>Snorlax Suites</h3>
+          <p>Dreamvale, AZ</p>
+          <p>💵 $60/share</p>
+          <p>👥 1,670 investors</p>
+        </article>
+
+        <article class="property" style="--percent:47">
+          <div class="progress-wrap">
+            <svg class="progress-circle" viewBox="0 0 48 48" aria-hidden="true">
+              <circle class="progress-bg" cx="24" cy="24" r="20"></circle>
+              <circle class="progress-fg" cx="24" cy="24" r="20"></circle>
+            </svg>
+            <div class="progress-text">47%</div>
+          </div>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=800&q=80" alt="Modern single-family rental property - Gengar Gardens exterior">
+          <h3>Gengar Gardens</h3>
+          <p>Shadow Creek, NV</p>
+          <p>💵 $55/share</p>
+          <p>👥 1,220 investors</p>
+        </article>
+      </div>
+      <p class="scroll-hint">Swipe sideways to explore more properties →</p>
+    </div>
+  </section>
+
+  <!-- INVEST NOW -->
+  <section class="invest" id="get-started" aria-labelledby="invest-heading">
+    <div class="container">
+      <div class="invest-inner">
+        <h2 id="invest-heading">Invest in Fractional Real Estate with EquiFi</h2>
+        <p class="strong">We’re getting everything ready for our first members.</p>
+        <p>We’ll be releasing our initial offering to a limited group of early investors. Leave your details below to get early access and product updates about new fractional real estate deals.</p>
+
+        <div class="invest-card">
+          <!-- HubSpot Form (lightweight embed) -->
+          <div
+            class="hs-form-frame"
+            data-region="na2"
+            data-portal-id="244309246"
+            data-form-id="edb0287d-6965-4904-b606-94cff581767d">
+          </div>
+          <p class="form-note">No spam — just key updates about launch timelines, new offerings, and educational content on fractional real estate investing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © 2025 EquiFi. All rights reserved. Securities offered via a registered platform. Investing involves risk, including possible loss of principal.
+</footer>
+
+<!-- HubSpot loader for hs-form-frame -->
+<script src="https://js-na2.hsforms.net/forms/embed/244309246.js" defer></script>
+</body>
+</html>
