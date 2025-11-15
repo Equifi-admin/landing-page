@@ -705,6 +705,33 @@ h1{
   font-weight:600!important;
   font-size:.9rem!important;
 }
+
+.nav-toggle {
+  display:none;
+  background:none;
+  border:1px solid #273341;
+  border-radius:999px;
+  padding:.35rem .75rem;
+  color:var(--text);
+  font-size:.9rem;
+}
+
+@media(max-width:992px){
+  .nav-toggle{display:inline-flex;align-items:center;gap:.4rem;}
+  .nav-links{
+    display:none;
+    position:absolute;
+    inset:3.1rem 1.5rem auto;
+    background:#020617;
+    border-radius:var(--radius);
+    border:1px solid #1f2937;
+    padding:1rem;
+    flex-direction:column;
+    gap:.9rem;
+  }
+  .nav-links.is-open{display:flex;}
+}
+
 .invest-card .hs_submit input{
   border-radius:999px!important;
   background:var(--brand)!important;
@@ -772,6 +799,11 @@ footer{
       <span class="logo" aria-hidden="true">▲</span>
       <span>EquiFi</span>
     </a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+      ☰
+    </button>
+    
     <nav class="nav-links" aria-label="Primary navigation">
       <a href="#how-it-works">How it works</a>
       <a href="#returns">Returns</a>
@@ -1205,14 +1237,31 @@ footer{
   </section>
 </main>
 
+
 <footer>
-  © 2025 EquiFi. All rights reserved. Securities offered via a registered platform. Investing involves risk, including possible loss of principal.
+  © 2025 EquiFi. All rights reserved. Securities may be offered through a registered broker-dealer or funding portal. 
+  Investing in private securities involves risk, including loss of principal. Past performance is not indicative of future results.
 </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.nav-links');
+  if (!toggle || !nav) return;
+
+  toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+});
+</script>
+
 
 <!-- HubSpot loader for hs-form-frame -->
 <script src="https://js-na2.hsforms.net/forms/embed/244309246.js" defer></script>
 </body>
 </html>
+
 
 
 
